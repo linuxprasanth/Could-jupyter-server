@@ -1,0 +1,59 @@
+1: docker pull ubuntu:latest
+
+2: docker run -it --name my-ubuntu ubuntu
+
+3====
+
+apt-get update && \
+    apt-get install -y \
+        software-properties-common \
+        curl \
+        git \
+        wget \
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*
+
+4===
+apt-get update && \
+    apt-get install -y \
+        python3 \
+        python3-pip \
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*
+
+5: apt update
+
+6: apt install nano -y
+
+7: python3 -m pip install notebook
+
+8: python3 -m notebook --version
+
+9: jupyter notebook --generate-config
+
+10: nano ~/.jupyter/jupyter_notebook_config.py
+
+#### ctrl+x and y then hit enter
+
+11: c.NotebookApp.allow_remote_access = True
+
+12: ====
+
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz
+tar -xvf ngrok-stable-linux-amd64.tgz
+
+13: ./ngrok authtoken your_auth_token
+
+14: pip3 install notebook
+
+15: python3 -m notebook --allow-root
+
+16: docker ps -a
+
+# copy or note your contaner id 
+
+17: docker exec -it 85525721994a /bin/bash
+
+                   <^^^^^^^^^^^> paste your contaner id here
+
+18: ./ngrok http 8888
